@@ -37,4 +37,24 @@ mod valuator_tests {
 
         assert_eq!(my_val.evaluate(input), expected);
     }
+
+    #[test]
+    fn evaluate_number_expect_zero() {
+        let my_val = Valuator::new();
+
+        let input = "5";
+        let expected: u32 = 0;
+
+        assert_eq!(my_val.evaluate(input), expected);
+    }
+
+    #[test]
+    fn evaluate_special_character_expect_zero() {
+        let my_val = Valuator::new();
+
+        let input = ":";
+        let expected: u32 = 0;
+
+        assert_eq!(my_val.evaluate(input), expected);
+    }
 }
